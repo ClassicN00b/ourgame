@@ -120,6 +120,7 @@ game_state.main.prototype = {
         this.player.body.bounce. y = .4;
         this.player.body.gravity.y = 400;
         this.player.body.collideWorldBounds = true;
+        this.player.body.setSize(100, 50, 50, 25);
         
         
 
@@ -131,10 +132,6 @@ game_state.main.prototype = {
     
     
         //creation of zombies group
-        game.physics.arcade.enable(this.zombie);
-        this.zombie.body.bounce. y = .4;
-        this.player.body.gravity.y = 400;
-        this.player.body.collideWorldBounds = true;
         this.zombie = game.add.group();
         this.zombie.scale.setTo(0.5);
     
@@ -248,7 +245,7 @@ game_state.main.prototype = {
         // Sprite debug info
     game.debug.spriteInfo(this.player, 400,200);
     game.debug.inputInfo(400, 300);
-  //  game.debug.body(this.player);
+    game.debug.body(this.player);
     
     //  game.debug.spriteInfo(this.ground, 400,200);
     // game.debug.inputInfo(400, 300);
